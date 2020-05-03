@@ -42,7 +42,7 @@ func getTodo(w http.ResponseWriter, r *http.Request) {
 	}{
 		ID:          1,
 		Title:       "Build Phase 1 of todo app",
-		Description: "Finish simple Go web server hosted in GKE",
+		Description: "Finish simple Go web server hosted in GKE and deployed with cloud build",
 		Completed:   false,
 		TimeCreated: time.Now(),
 	}
