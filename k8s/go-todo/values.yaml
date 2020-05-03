@@ -3,5 +3,7 @@ container:
   name: go-todo
   port: 8888
   image: gcr.io/go-todo-list/go-todo
-  tag: hello
+  tag: hola
+  static_ip_name: go-todo-ip
+  domain: go-todo.aderada.com
 replicas: 1
