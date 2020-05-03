@@ -27,7 +27,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	target := os.Getenv("TARGET")
 	if target == "" {
-		target = "Vorto"
+		target = "Mundo"
 	}
 	fmt.Fprintf(w, "Hola %s!\n", target)
 }
