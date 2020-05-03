@@ -23,7 +23,7 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	log.Print("Hola received a request.")
+	log.Print("Server received a request.")
 	target := os.Getenv("TARGET")
 	if target == "" {
 		target = "Mundo"
