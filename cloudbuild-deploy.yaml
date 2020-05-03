@@ -20,7 +20,7 @@ steps:
       - gcr.io/${PROJECT_ID}/go-todo:${TAG_NAME}
 
   - id: deploy
-    name: cloudnatived/helm-cloudbuilder
+    name: gcr.io/cloud-builders/helm
     env:
       - KUBECONFIG=/workspace/.kube/config
     args:
