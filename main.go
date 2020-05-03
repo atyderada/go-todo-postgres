@@ -41,7 +41,7 @@ func getTodo(w http.ResponseWriter, r *http.Request) {
 		TimeCreated   time.Time `todo:"timeCreated"`
 	}{
 		ID:          1,
-		Title:       "Build Phase 1 of todo app",
+		Title:       "Build Phase 2 of todo app",
 		Description: "Finish simple Go web server hosted in GKE and deployed with cloud build",
 		Completed:   false,
 		TimeCreated: time.Now(),
