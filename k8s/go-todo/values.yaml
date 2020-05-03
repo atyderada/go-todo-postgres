@@ -1,0 +1,7 @@
+environment: development
+container:
+  name: go-todo
+  port: 8888
+  image: gcr.io/go-todo-list/go-todo
+  tag: hello
+replicas: 1

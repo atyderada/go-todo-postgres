@@ -1,0 +1,37 @@
+steps:
+
+    # build only the first stage, so we can run tests with it
+  - id: build-test-image
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker image build --target build --tag go-todo:test .
+
+  - id: run-tests
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker container run go-todo:test go test
+
+  - id: build-app
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker image build --tag gcr.io/${PROJECT_ID}/go-todo:${COMMIT_SHA} .
+
+  - id: kubeval
+    name: cloudnatived/helm-cloudbuilder
+    entrypoint: sh
+    args:
+      - -c
+      - |
+        helm template ./k8s/go-todo/ | kubeval
+
+images:
+  - gcr.io/${PROJECT_ID}/go-todo:${COMMIT_SHA}
