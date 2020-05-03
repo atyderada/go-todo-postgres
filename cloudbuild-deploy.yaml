@@ -20,11 +20,10 @@ steps:
       - gcr.io/${PROJECT_ID}/go-todo:${TAG_NAME}
 
   - id: deploy
-    name: gcr.io/go-todo-list/helm:latest
+    name: 'gcr.io/${PROJECT_ID}/helm'
     env:
       - KUBECONFIG=/workspace/.kube/config
     args:
-      - helm
       - upgrade
       - --install
       - ${TAG_NAME}-go-todo
