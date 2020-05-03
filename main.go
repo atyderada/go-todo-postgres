@@ -24,6 +24,7 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	log.Print("Server received a request!")
+	w.WriteHeader(http.StatusOK)
 	target := os.Getenv("TARGET")
 	if target == "" {
 		target = "Mundo"
