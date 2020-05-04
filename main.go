@@ -27,9 +27,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	target := os.Getenv("TARGET")
 	if target == "" {
-		target = "Mundo"
+		target = "Gotoist"
 	}
-	fmt.Fprintf(w, "Hola %s!\n", target)
+	fmt.Fprintf(w, "Welcome to the to-do list manager %s!\n", target)
 }
 
 func getTodo(w http.ResponseWriter, r *http.Request) {
