@@ -27,7 +27,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	target := os.Getenv("TARGET")
 	if target == "" {
-		target = "Gotoist"
+		target = "Togoist"
 	}
 	fmt.Fprintf(w, "Welcome to the to-do list manager %s!\n", target)
 }
