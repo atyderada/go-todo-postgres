@@ -17,7 +17,7 @@ func TestHandler(t *testing.T) {
 	if status := rr.Code; status != http.StatusOK {
 		t.Errorf("handler returned wrong status code: got %v, want %v", status, http.StatusOK)
 	}
-	expected := "Hola Mundo!\n"
+	expected := "Welcome to the to-do list manager Togoist!\n Usage: \n /get -> Get a sample todo list item \n"
 	if rr.Body.String() != expected {
 		t.Errorf("handler returned unexpected body: got %v, want %v", rr.Body.String(), expected)
 	}

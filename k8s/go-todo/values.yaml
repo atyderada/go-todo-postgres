@@ -5,5 +5,5 @@ container:
   image: gcr.io/go-todo-list/go-todo
   tag: hola
   static_ip_name: go-todo-ip
-  domain: go-todo.aderada.com
+  domain: togoist.app
 replicas: 1
