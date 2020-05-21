@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta3
+kind: Config
+build:
+    tagPolicy:
+        sha256: {}
+    artifacts:
+    - image: go-todo
+deploy:
+    helm:
+        releases:
+        - name: go-todo
+          chartPath: ./k8s/go-todo
+          namespace: default
+          values:
+            image: go-todo
