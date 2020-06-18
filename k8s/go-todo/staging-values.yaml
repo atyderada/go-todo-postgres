@@ -1,1 +1,4 @@
 environment: staging
+container:
+    image: gcr.io/go-todo-list/go-todo
+    enable_ingress: true

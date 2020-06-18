@@ -2,8 +2,10 @@ environment: development
 container:
   name: go-todo
   port: 8080
-  image: gcr.io/go-todo-list/go-todo
-  tag: hola
+  tag: latest
+  image: go-todo
+  imagePullPolicy: IfNotPresent
   static_ip_name: go-todo-ip
   domain: togoist.app
+  enable_ingress: false
 replicas: 1

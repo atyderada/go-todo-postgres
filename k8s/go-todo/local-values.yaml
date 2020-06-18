@@ -1,0 +1,5 @@
+environment: development
+container:
+  image: go-todo
+  enable_ingress: false
+replicas: 1
